@@ -2,13 +2,19 @@ const http = require('http')
 
 const server = http.createServer((req,res)=>{
     if(req.url === '/'){
-        res.end('This is my Home Page')
+        res.writeHead(200,{'content-type':'text/html'})
+        res.write('<h1>Home Page</h1>')
+        res.end()
     }
     else if(req.url === '/about'){
-        res.end('This is about Page')
+        res.writeHead(200,{'content-type':'text/html'})
+        res.write('<h1>About Me Page</h1>')
+        res.end()
     }
     else if(req.url === '/contact'){
-        res.end('This is Contact Page')
+        res.writeHead(200,{'content-type':'text/html'})
+        res.write('<h1>Contact Page</h1>')
+        res.end()
     }
     else{
         res.end('404, Resource Not Found'); 
